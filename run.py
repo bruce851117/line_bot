@@ -1,5 +1,6 @@
 import requests
-
+from datetime import datetime as dt
+import time
 
 def lineNotifyMessage(token, msg):
     headers = {
@@ -13,7 +14,11 @@ def lineNotifyMessage(token, msg):
 
 
 if __name__ == '__main__':
-  message = '[LINE Notify] Hello World' # 要傳送的訊息內容
-  token = 'xxxxxxxxxxxxxxxxxxxxxxx' # 權杖值
+    message = '[LINE Notify] Hello World' # 要傳送的訊息內容
+    token = 'U6T7zu3vFz40C3uVOVKrtdpoHpMBXCmKhmHrs9Q1cif' # 權杖值
 
-  lineNotifyMessage(token, message)
+    # lineNotifyMessage(token, message)
+    while True:
+        now = str(dt.now())
+        lineNotifyMessage(token,now)
+        time.sleep(10)
