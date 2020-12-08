@@ -19,5 +19,5 @@ if __name__ == '__main__':
 
     # lineNotifyMessage(token, message)
     while True:
-        if dt.now().minute%5==0:
+        if dt.now().minute%5==0 and dt.now().second==0:
             lineNotifyMessage(token,'hello')
